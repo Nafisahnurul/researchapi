@@ -1,13 +1,10 @@
 // config/passport.js
 
 // load all the things we need
-var LocalStrategy    = require('passport-local').Strategy;
-var FacebookStrategy = require('passport-facebook').Strategy;
-var TwitterStrategy  = require('passport-twitter').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 // load up the user model
-var User       = require('../app/models/user');
+var User       = require('../models/user');
 
 // load the auth variables
 var configAuth = require('./auth');
@@ -36,13 +33,13 @@ module.exports = function(passport) {
     // =========================================================================
     passport.use(new GoogleStrategy({
 
-        clientID        : '538655775637-ae0jffp2b2euq8gm6i3jbrfdnmel9gb6.apps.googleusercontent.com',
-        clientSecret    : 'TduvWT4kY4zjElbW3LegveQe',
-        callbackURL     : 'http://localhost/',
+        clientID        : configAuth.googleAuth.clientID,
+        clientSecret    : configAuth.googleAuth.clientSecret,
+        callbackURL     : configAuth.googleAuth.callbackURL,
 
     },
     function(token, refreshToken, profile, done) {
-
+        
         // make the code asynchronous
         // User.findOne won't fire until we have all our data back from Google
         process.nextTick(function() {

@@ -1,7 +1,8 @@
 // app/routes.js
 var express = require('express'),
     router = express.Router(),
-    passport = require('passport');
+    passport = require('passport')
+               require('../config/passport')(passport);
 
     // route for home page
     router.get('/', function(req, res) {

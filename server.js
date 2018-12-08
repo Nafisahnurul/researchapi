@@ -3,6 +3,7 @@ const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+const mongoose = require('mongoose');
 
 const authRouter = require('./routes/authentication');
 const port = 2000;
@@ -17,6 +18,8 @@ app.use(bodyParser.json()); // parse form data client
 app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
 app.use(fileUpload()); // configure fileupload
 
+mongoose.connect(process.env.database_uri || "mongodb://localhost/researchapi", { useNewUrlParser: true });
+
 // routes for the app
 
 app.use('/', authRouter);
@@ -25,4 +28,5 @@ app.use('/', authRouter);
 // set the app to listen on the port
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
+    console.log("Database running: ", (process.env.database_uri || "mongodb://localhost/researchapi"))
 });

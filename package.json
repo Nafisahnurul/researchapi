@@ -4,13 +4,16 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-fileupload": "^1.0.0",
     "fileupload": "^1.0.0",
     "googleapis": "^36.0.0",
+    "mongoose": "^5.3.15",
     "passport": "^0.4.0",
-    "passport-google-oauth": "^1.0.0"
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
