@@ -1,0 +1,29 @@
+{
+  "name": "researchapi1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
+    "fileupload": "^1.0.0",
+    "googleapis": "^36.0.0",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nafisahnurul/researchapi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nafisahnurul/researchapi/issues"
+  },
+  "homepage": "https://github.com/Nafisahnurul/researchapi#readme"
+}
